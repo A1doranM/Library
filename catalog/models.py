@@ -21,6 +21,9 @@ class Genre(models.Model):
         """
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 
 class Language(models.Model):
     """
@@ -34,6 +37,9 @@ class Language(models.Model):
         String for representing the Model object (in Admin site etc.)
         """
         return self.name
+
+    class Meta:
+        ordering = ['name']
 
 
 class Book(models.Model):
@@ -70,6 +76,9 @@ class Book(models.Model):
         String for representing the Model object.
         """
         return self.title
+
+    class Meta:
+        ordering = ['author']
 
 
 class BookInstance(models.Model):
