@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    {% if user.is_staff %}
+
+        <h1>Delete Book</h1>
+
+        <p>Are you sure you want to delete the book: {{ book }}?</p>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="submit" action="" value="Yes, delete." />
+        </form>
+    {% else %}
+        <meta http-equiv="refresh" content="1;http://127.0.0.1:8000/catalog" />
+    {% endif %}
+{% endblock %}

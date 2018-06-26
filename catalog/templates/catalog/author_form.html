@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    {% if user.is_staff %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit" />
+        </form>
+        {% else %}
+            <meta http-equiv="refresh" content="1;http://127.0.0.1:8000/catalog" />
+    {% endif %}
+{% endblock %}
